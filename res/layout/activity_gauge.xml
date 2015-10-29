@@ -1,0 +1,255 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:gauge="http://schemas.android.com/apk/res/com.example.android.apis"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.demotest.GaugeActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="196dip"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg" >
+
+        <FrameLayout
+            android:id="@+id/frameLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dip" >
+
+            <com.example.android.apis.aaa.GaugeView
+                android:id="@+id/speed_gauge_view"
+                android:layout_width="188dp"
+                android:layout_height="188dp"
+                android:background="@drawable/speed"
+                gauge:divisions="10"
+                gauge:scaleEndValue="260"
+                gauge:scaleStartAngle="320"
+                gauge:scaleStartValue="0"
+                gauge:subdivisions="2" />
+
+            <TextView
+                android:id="@+id/speed_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="15pt" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:text="km/h"
+                android:textColor="@android:color/white"
+                android:textSize="5pt" />
+        </FrameLayout>
+
+        <ViewSwitcher
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/car"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/left_front_door"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/left_back_door"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/door_left"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/back_door"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/car"
+                    android:layout_alignTop="@+id/left_back_door"
+                    android:src="@drawable/back_door"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/right_front_door"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/right_back_door"
+                    android:layout_alignTop="@+id/left_front_door"
+                    android:src="@drawable/door_right"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/left_back_door"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/left_front_door"
+                    android:layout_toLeftOf="@+id/car"
+                    android:src="@drawable/door_left"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/right_back_door"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/right_front_door"
+                    android:layout_toRightOf="@+id/car"
+                    android:src="@drawable/door_right"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/left_back_win_unlock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/back_door"
+                    android:layout_toLeftOf="@+id/car"
+                    android:src="@drawable/win_unclosed"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/right_back_win_unlock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/back_door"
+                    android:layout_toRightOf="@+id/car"
+                    android:src="@drawable/win_unclosed"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/left_front_win_unlock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/left_back_win_unlock"
+                    android:layout_toLeftOf="@+id/car"
+                    android:src="@drawable/win_unclosed"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/right_front_win_unlock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/left_front_win_unlock"
+                    android:layout_toRightOf="@+id/car"
+                    android:src="@drawable/win_unclosed"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/range_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="30dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/remaining_oil"
+                    android:layout_marginTop="10dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/range"
+                    android:layout_marginTop="10dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/remaining_oil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="30dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/range"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/remaining_oil"
+                    android:layout_marginTop="10dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/remaining_range"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/range"
+                    android:layout_marginTop="10dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+        </ViewSwitcher>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dip" >
+
+            <com.example.android.apis.aaa.GaugeView
+                android:id="@+id/rpm_gauge_view"
+                android:layout_width="188dp"
+                android:layout_height="188dp"
+                android:background="@drawable/rpm"
+                gauge:divisions="10"
+                gauge:scaleEndValue="8000"
+                gauge:scaleStartValue="0"
+                gauge:subdivisions="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="1000"
+                android:textColor="@android:color/white"
+                android:textSize="13pt" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:text="RPM"
+                android:textColor="@android:color/white"
+                android:textSize="5pt" />
+        </FrameLayout>
+
+        <ToggleButton
+            android:id="@+id/toggleButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/frameLayout1"
+            android:textOn=""
+            android:textOff=""
+            android:drawableTop="@drawable/win_stat"
+            android:background="@android:color/transparent"
+            android:paddingTop="10dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

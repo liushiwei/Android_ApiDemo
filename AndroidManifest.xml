@@ -3006,6 +3006,24 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".aaa.TranslucentActivity"
+            android:label="Aaa/TranslucentActivity"
+            android:theme="@style/translucent" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".aaa.GaugeActivity"
+            android:label="Aaa/GaugeActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+            
+        </activity>
     </application>
 
     <instrumentation android:name=".app.LocalSampleInstrumentation"
